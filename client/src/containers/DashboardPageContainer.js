@@ -14,7 +14,7 @@ const usersQuery = gql`
     }
   }
 `;
-const deleteUser = gql`
+const deleteUserQuery = gql`
 mutation deleteUser($id: ID!) {
   deleteUser(
     id: $id
@@ -25,8 +25,20 @@ mutation deleteUser($id: ID!) {
 `;
 
 
+const getUsers = graphql(usersQuery, {
+  // props: ({ data }) => ({
+  //   // tacos: data,
+  // }),
+});
 
-const DashboardPageWithData = graphql(usersQuery, deleteUser)(DashboardPage);
-// const DashboardPageWithData = compose(usersQuery, deleteUser)(DashboardPage);
+const deleteUser = graphql(deleteUserQuery, {
+  // props: ({ data }) => ({
+  //   user: data,
+  // }),
+});
+
+
+const DashboardPageWithData = compose(getUsers, deleteUser)(DashboardPage);
+// const DashboardPageWithData = graphql(usersQuery, deleteUser)(DashboardPage);
 
 export default DashboardPageWithData;
