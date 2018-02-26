@@ -27,7 +27,7 @@ mutation deleteUser($id: ID!) {
 
 const getUsers = graphql(usersQuery, {
   // props: ({ data }) => ({
-  //   // tacos: data,
+  //     user: data,
   // }),
 });
 
