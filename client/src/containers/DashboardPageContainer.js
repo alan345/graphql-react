@@ -26,8 +26,13 @@ mutation deleteUser($id: ID!) {
 
 
 const getUsers = graphql(usersQuery, {
-  // props: ({ data }) => ({
-  //     user: data,
+  // props: ({ ownProps, mutate }) => ({
+  //   getUsers () {
+  //     return mutate()
+  //     .then((result) => {
+  //       console.log(result);
+  //     });
+  //   },
   // }),
 });
 
@@ -39,6 +44,6 @@ const deleteUser = graphql(deleteUserQuery, {
 
 
 const DashboardPageWithData = compose(getUsers, deleteUser)(DashboardPage);
-// const DashboardPageWithData = graphql(usersQuery, deleteUser)(DashboardPage);
+// const DashboardPageWithData = graphql(usersQuery, deleteUserQuery)(DashboardPage);
 
 export default DashboardPageWithData;
