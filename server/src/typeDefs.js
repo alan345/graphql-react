@@ -32,7 +32,10 @@ const typeDefs = [/* GraphQL */`
 
     # Sign in.
     signIn(email: String!, password: String!): Auth
+
+    deleteUser(id: ID!): User
   }
+
 
   schema {
     query: Query
