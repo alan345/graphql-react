@@ -1,4 +1,4 @@
-# React auth app example
+# React auth mongodb express app example
 
 ## Description
 
