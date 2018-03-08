@@ -35,12 +35,15 @@ const getUsers = graphql(usersQuery, {
   //   },
   // }),
 });
-
 const deleteUser = graphql(deleteUserQuery, {
-  // props: ({ data }) => ({
-  //   user: data,
-  // }),
-});
+    name: 'deleteUser',
+})
+
+// const deleteUser = graphql(deleteUserQuery, {
+//   props: ({ data }) => ({
+//     user: data,
+//   }),
+// });
 
 
 const DashboardPageWithData = compose(getUsers, deleteUser)(DashboardPage);

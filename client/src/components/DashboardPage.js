@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => {
-
+  console.log(props.data)
   const users = props.data.users;
 
   if (!users) {
@@ -16,10 +16,14 @@ export default (props) => {
     );
   }
 
-  function deleteRow( userId, e) {
-    console.log(userId);
+  function deleteRow(id, e) {
+    // console.log(userId);
+
+    props.deleteUser({
+      variables: { id },
+    })
     // props.deleteUser({userId: userId})
-    props.deleteUser({id: userId})
+    // props.deleteUser(userId)
 
 
   }
